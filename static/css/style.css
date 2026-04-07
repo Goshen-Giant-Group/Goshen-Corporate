@@ -33,7 +33,12 @@
         header {
             background: white;
             box-shadow: var(--shadow-sm);
-            padding: 1rem 0;
+            padding: 0.55rem 0;
+        }
+
+        .navbar {
+            padding-top: 0;
+            padding-bottom: 0;
         }
 
         .navbar-brand {
@@ -41,14 +46,30 @@
             font-size: 1.5rem;
             color: var(--brand-yellow) !important;
             display: inline-flex;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            line-height: 1;
             padding: 0;
         }
 
         .nav-logo {
-            height: clamp(52px, 6vw, 88px);
+            height: clamp(44px, 5vw, 72px);
             width: auto;
             display: block;
+        }
+
+        .nav-brand-text {
+            margin-top: 0.1rem;
+            font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, Arial, sans-serif;
+            font-size: clamp(0.76rem, 1.02vw, 0.95rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+            text-align: center;
+            color: #0b4f12;
+            text-shadow: 0 0.6px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.12);
         }
 
         nav a {
@@ -62,11 +83,15 @@
             color: var(--secondary-color) !important;
         }
 
+        .navbar-nav.ms-auto {
+            margin-left: 15rem !important;
+        }
+
         /* Hero Section */
         .hero {
             background: var(--accent-gradient);
             color: white;
-            padding: 6rem 0;
+            padding: 7rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -92,6 +117,47 @@
             z-index: 1;
         }
 
+        .hero-reveal-title {
+            display: inline-block;
+            opacity: 0;
+            animation: fadeInDown 0.9s ease-out 0.1s forwards;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-22px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-reveal-title {
+                animation: none;
+                opacity: 1;
+            }
+
+            .hero-buttons {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+
         .hero p {
             font-size: 1.25rem;
             margin-bottom: 2rem;
@@ -103,6 +169,8 @@
         .hero-buttons {
             position: relative;
             z-index: 1;
+            opacity: 0;
+            animation: fadeInUp 0.9s ease-out 0.35s forwards;
         }
 
         .btn-primary {
@@ -240,22 +308,58 @@
 
         /* Why Work With Us */
         .why-work-section {
-            background: linear-gradient(135deg, var(--accent-light) 0%, #f9fafb 100%);
+            background:
+                radial-gradient(circle at 15% 20%, rgba(16, 145, 7, 0.08), transparent 45%),
+                radial-gradient(circle at 85% 10%, rgba(242, 201, 76, 0.18), transparent 35%),
+                linear-gradient(135deg, var(--accent-light) 0%, #f9fafb 100%);
+        }
+
+        .why-work-intro {
+            max-width: 840px;
+            margin: 0 auto 1.25rem;
+            padding: 1.25rem 1.5rem;
+            background: #fff;
+            border: 1px solid rgba(16, 145, 7, 0.14);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .why-work-intro-title {
+            margin: 0 0 0.55rem;
+            color: var(--primary-color);
+            font-size: clamp(1.25rem, 2vw, 1.8rem);
+            font-weight: 700;
+        }
+
+        .why-work-intro-text {
+            margin: 0;
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: #4b5563;
         }
 
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         .benefit-item {
             padding: 1.5rem;
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid rgba(16, 145, 7, 0.08);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(16, 145, 7, 0.26);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.09);
         }
 
         .benefit-item i {
@@ -940,11 +1044,19 @@
             }
 
             .hero {
-                padding: 4rem 0;
+                padding: 4.75rem 0;
             }
 
             section {
                 padding: 2rem 0;
+            }
+
+            .why-work-intro {
+                padding: 1rem 1rem;
+            }
+
+            .why-work-intro-text br {
+                display: none;
             }
 
             .job-meta {
