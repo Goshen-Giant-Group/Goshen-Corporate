@@ -105,6 +105,8 @@ def careers(request):
         'jobs': jobs,
         'companies': companies,
         'total_jobs': jobs.count(),
+        'join_widget_embed_code': getattr(settings, 'JOIN_WIDGET_EMBED_CODE', ''),
+        'join_careers_url': getattr(settings, 'JOIN_CAREERS_URL', ''),
     }
     return render(request, 'jobs/careers.html', context)
 
@@ -140,19 +142,16 @@ def contact(request):
             daemon=True,
         ).start()
 
-        messages.success(request, "Thanks — your message has been received. We'll get back to you shortly.")
+        messages.success(request, "Thanks - your message has been received. We'll get back to you shortly.")
         return redirect('contact')
 
     return render(request, 'jobs/contact.html', {'contact_info': CONTACT_INFO})
 
 
 def job_detail(request, pk):
-    """Redirect to join.com job posting"""
+    """Show a local detail page for a JOIN-synced job."""
     job = get_object_or_404(Job, pk=pk)
-    if job.join_com_url:
-        return redirect(job.join_com_url)
-    # If no join.com URL, redirect back to careers page
-    return redirect('careers')
+    return render(request, 'jobs/job_detail.html', {'job': job})
 
 
 @require_http_methods(["GET", "POST"])
@@ -162,9 +161,6 @@ def general_application(request):
     job_id = request.GET.get('job')
     if job_id:
         selected_job = Job.objects.filter(pk=job_id).first()
-        # Redirect to join.com if URL is available
-        if selected_job and selected_job.join_com_url:
-            return redirect(selected_job.join_com_url)
 
     if request.method == 'POST':
         experience_value = request.POST.get('experience_years', '').strip()

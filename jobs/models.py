@@ -31,12 +31,15 @@ class Job(models.Model):
     ]
     
     title = models.CharField(max_length=255)
+    external_id = models.CharField(max_length=100, unique=True, blank=True, null=True, db_index=True)
     location = models.CharField(max_length=50, choices=LOCATION_CHOICES)
     job_type = models.CharField(max_length=50, choices=TYPE_CHOICES)
     description = models.TextField()
     requirements = models.TextField()
     is_featured = models.BooleanField(default=False)
     join_com_url = models.URLField(blank=True, null=True, help_text='Link to job posting on join.com')
+    source_status = models.CharField(max_length=20, default='ONLINE', blank=True)
+    raw_data = models.JSONField(default=dict, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

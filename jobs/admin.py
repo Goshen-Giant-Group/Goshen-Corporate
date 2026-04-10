@@ -11,10 +11,10 @@ class CompanyAdmin(admin.ModelAdmin):
 
 @admin.register(Job)
 class JobAdmin(admin.ModelAdmin):
-    list_display = ('title', 'location', 'job_type', 'join_com_url', 'created_at', 'is_featured')
-    list_filter = ('location', 'job_type', 'is_featured', 'created_at')
-    search_fields = ('title', 'description')
-    fields = ('title', 'location', 'job_type', 'description', 'requirements', 'join_com_url', 'is_featured')
+    list_display = ('title', 'external_id', 'source_status', 'location', 'job_type', 'join_com_url', 'created_at', 'is_featured')
+    list_filter = ('source_status', 'location', 'job_type', 'is_featured', 'created_at')
+    search_fields = ('title', 'description', 'external_id')
+    fields = ('title', 'external_id', 'source_status', 'location', 'job_type', 'description', 'requirements', 'join_com_url', 'is_featured', 'raw_data')
     ordering = ('-created_at',)
 
 

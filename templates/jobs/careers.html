@@ -121,44 +121,58 @@
             <h2 class="section-title">
                 <i class="bi bi-briefcase"></i> Open Roles
             </h2>
-            <p class="section-subtitle">
-                {% if total_jobs == 1 %}
-                    1 position available
-                {% elif total_jobs > 0 %}
-                    {{ total_jobs }} positions available
-                {% else %}
-                    No open positions at the moment
-                {% endif %}
-            </p>
+            {% if join_widget_embed_code %}
+                <p class="section-subtitle">Live openings synced directly from JOIN</p>
+                <div style="background: #fff; border-radius: 20px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                    {{ join_widget_embed_code|safe }}
+                </div>
+            {% elif join_careers_url %}
+                <p class="section-subtitle">Open roles are hosted on our JOIN careers portal</p>
+                <div style="text-align: center; padding: 2rem; background: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                    <a href="{{ join_careers_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-box-arrow-up-right"></i> View Live Roles on JOIN
+                    </a>
+                </div>
+            {% else %}
+                <p class="section-subtitle">
+                    {% if total_jobs == 1 %}
+                        1 position available
+                    {% elif total_jobs > 0 %}
+                        {{ total_jobs }} positions available
+                    {% else %}
+                        No open positions at the moment
+                    {% endif %}
+                </p>
 
-            <div class="jobs-container">
-                {% for job in jobs %}
-                    <div class="job-card">
-                        <h3>{{ job.title }}</h3>
-                        <div class="job-meta">
-                            <div class="job-meta-item">
-                                <i class="bi bi-geo-alt"></i>
-                                <span><strong>Location:</strong> {{ job.get_location_display }}</span>
+                <div class="jobs-container">
+                    {% for job in jobs %}
+                        <div class="job-card">
+                            <h3>{{ job.title }}</h3>
+                            <div class="job-meta">
+                                <div class="job-meta-item">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <span><strong>Location:</strong> {{ job.get_location_display }}</span>
+                                </div>
+                                <div class="job-meta-item">
+                                    <i class="bi bi-clock"></i>
+                                    <span><strong>Type:</strong> {{ job.get_job_type_display }}</span>
+                                </div>
                             </div>
-                            <div class="job-meta-item">
-                                <i class="bi bi-clock"></i>
-                                <span><strong>Type:</strong> {{ job.get_job_type_display }}</span>
+                            <p>{{ job.description|truncatewords:30 }}</p>
+                            <div class="job-card-buttons">
+                                <a href="{% url 'job_detail' job.pk %}" class="btn-learn-more">
+                                    <i class="bi bi-eye"></i> View Details
+                                </a>
                             </div>
                         </div>
-                        <p>{{ job.description|truncatewords:30 }}</p>
-                        <div class="job-card-buttons">
-                            <a href="{{ job.join_com_url }}" class="btn-learn-more" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-eye"></i> View Details
-                            </a>
+                    {% empty %}
+                        <div style="text-align: center; padding: 2rem; color: #6b7280;">
+                            <i class="bi bi-inbox" style="font-size: 3rem; display: block; margin-bottom: 1rem;"></i>
+                            <p>No open positions at the moment. Please check back soon!</p>
                         </div>
-                    </div>
-                {% empty %}
-                    <div style="text-align: center; padding: 2rem; color: #6b7280;">
-                        <i class="bi bi-inbox" style="font-size: 3rem; display: block; margin-bottom: 1rem;"></i>
-                        <p>No open positions at the moment. Please check back soon!</p>
-                    </div>
-                {% endfor %}
-            </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
     </section>
 
@@ -186,7 +200,7 @@
                 <div class="process-step">
                     <div class="process-step-number">3</div>
                     <h4 class="process-step-title">Interview</h4>
-                    <p>1–2 stages with our team</p>
+                    <p>1-2 stages with our team</p>
                 </div>
                 <div style="display: flex; align-items: center; justify-content: center; color: var(--secondary-color);">
                     <i class="bi bi-arrow-right" style="font-size: 2rem;"></i>

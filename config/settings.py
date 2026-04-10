@@ -110,6 +110,9 @@ DATABASES = {
         'PASSWORD': os.getenv('DB_PASSWORD', ''),
         'HOST': os.getenv('DB_HOST', '127.0.0.1'),
         'PORT': os.getenv('DB_PORT', '5432'),
+        'OPTIONS': {
+            'sslmode': os.getenv('DB_SSLMODE', 'prefer'),
+        },
     }
 }
 
@@ -169,6 +172,10 @@ EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'apikey')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
 SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY', EMAIL_HOST_PASSWORD)
 SENDGRID_API_TIMEOUT = int(os.getenv('SENDGRID_API_TIMEOUT', '15'))
+
+# JOIN widget integration
+JOIN_WIDGET_EMBED_CODE = os.getenv('JOIN_WIDGET_EMBED_CODE', '')
+JOIN_CAREERS_URL = os.getenv('JOIN_CAREERS_URL', '')
 
 GENERAL_APPLICATION_RECIPIENT = os.getenv('GENERAL_APPLICATION_RECIPIENT', 'inquiry@goshengiantfoods.com')
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'no-reply@goshengiantfoods.com')

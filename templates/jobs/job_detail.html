@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ job.title }} - Goshen Giant Group{% endblock %}
+
+{% block content %}
+<section class="hero" style="padding: 5rem 0 3rem;">
+    <div class="container-lg">
+        <p class="section-subtitle" style="margin-bottom: 0.75rem;">Open role</p>
+        <h1 class="hero-reveal-title" style="font-size: clamp(2.5rem, 5vw, 4.5rem);">{{ job.title }}</h1>
+        <div class="job-meta" style="margin-top: 1.5rem; justify-content: center;">
+            <div class="job-meta-item">
+                <i class="bi bi-geo-alt"></i>
+                <span><strong>Location:</strong> {{ job.get_location_display }}</span>
+            </div>
+            <div class="job-meta-item">
+                <i class="bi bi-clock"></i>
+                <span><strong>Type:</strong> {{ job.get_job_type_display }}</span>
+            </div>
+            {% if job.source_status %}
+            <div class="job-meta-item">
+                <i class="bi bi-broadcast"></i>
+                <span><strong>Status:</strong> {{ job.source_status }}</span>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container-lg">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="about-content" style="padding: 2rem; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                    <h2 class="section-title" style="margin-top: 0;">Role Overview</h2>
+                    <p style="font-size: 1.05rem; line-height: 1.8;">{{ job.description|linebreaksbr }}</p>
+
+                    <h2 class="section-title" style="margin-top: 2.5rem;">Requirements</h2>
+                    <p style="font-size: 1.05rem; line-height: 1.8;">{{ job.requirements|linebreaksbr }}</p>
+
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem;">
+                        <a href="{% url 'general_application' %}?job={{ job.pk }}" class="btn btn-primary">
+                            <i class="bi bi-send"></i> Apply Now
+                        </a>
+                        {% if job.join_com_url %}
+                        <a href="{{ job.join_com_url }}" class="btn btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-box-arrow-up-right"></i> View on JOIN
+                        </a>
+                        {% endif %}
+                        <a href="{% url 'careers' %}#jobs" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left"></i> Back to Careers
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
