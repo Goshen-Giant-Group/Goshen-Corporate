@@ -221,6 +221,9 @@ def general_application(request):
 
 @require_http_methods(["GET", "POST"])
 def job_application(request, pk):
-    """Legacy route: redirect to the general application form with selected position."""
-    get_object_or_404(Job, pk=pk)
+    """Legacy route: send JOIN-linked jobs to JOIN, otherwise fall back to the general form."""
+    job = get_object_or_404(Job, pk=pk)
+    if job.join_com_url:
+        return redirect(job.join_com_url)
+
     return redirect(f"{reverse('general_application')}?job={pk}")

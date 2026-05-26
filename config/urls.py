@@ -14,9 +14,25 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from urllib.parse import urljoin
+
 from django.contrib import admin
+from django.conf import settings
 from django.urls import path, include
+from django.http import HttpResponsePermanentRedirect
+from django.views import View
 from jobs import views as jobs_views
+
+
+class OldLabPathRedirectView(View):
+    """Redirect the retired lab path to the lab subhost."""
+
+    permanent = True
+
+    def get(self, request, *args, **kwargs):
+        target_base = settings.LAB_CANONICAL_URL or '/'
+        target_url = urljoin(target_base, '/')
+        return HttpResponsePermanentRedirect(target_url)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,7 +44,8 @@ urlpatterns = [
     path('careers/jobs/<int:pk>/', jobs_views.job_detail, name='job_detail'),
     path('careers/apply/general/', jobs_views.general_application, name='general_application'),
     path('careers/jobs/<int:pk>/apply/', jobs_views.job_application, name='job_application'),
-    
-    # Goshen Laboratory (accessible at /naturis-analytical-lab/)
-    path('naturis-analytical-lab/', include('lab.urls', namespace='lab')),
+    path('lab/', include(('lab.urls', 'lab'), namespace='lab')),
+
+    # Retired lab path: redirect to the subhost.
+    path('naturis-analytical-lab/', OldLabPathRedirectView.as_view()),
 ]

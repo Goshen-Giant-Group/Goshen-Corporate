@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Goshen Giant Group - Careers{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{{ meta_description|default:'Goshen Giant Group careers, company information, and open roles.' }}{% endblock %}">
+    <link rel="canonical" href="{% block canonical_url %}{{ canonical_url|default:request.build_absolute_uri }}{% endblock %}">
     <link rel="icon" type="image/png" href="{% static 'images/goshen_icon_round.png' %}" sizes="any">
     <link rel="apple-touch-icon" href="{% static 'images/goshen_icon_round.png' %}">
     <meta name="theme-color" content="#109107">
@@ -21,7 +23,7 @@
             <div class="container-lg">
                 <a class="navbar-brand" href="/">
                     <img src="{% static 'images/goshen_logo.png' %}" alt="Goshen Giant Group logo" class="nav-logo">
-                    {% if 'naturis-analytical-lab' in request.path %}
+                    {% if request.lab_site %}
                         <span class="nav-brand-text">Naturis Analytical Laboratory</span>
                     {% else %}
                         <span class="nav-brand-text">Goshen Giant Group</span>
@@ -32,8 +34,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        {% if 'naturis-analytical-lab' in request.path %}
-                            <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                        {% if request.lab_site %}
+                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                             <li class="nav-item"><a class="nav-link" href="#quality">Quality</a></li>
                             <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
@@ -83,7 +85,7 @@
             <div class="footer-bottom">
                 <div class="footer-left">
                     <p class="copy">&copy; 2026 Goshen Giant Group Limited. All rights reserved.</p>
-                    {% if 'naturis-analytical-lab' in request.path %}
+                    {% if request.lab_site %}
                         <p class="slogan">Naturis Analytical Laboratory</p>
                     {% else %}
                         <p class="slogan">Naturis Giant - Authentic African Foods</p>
@@ -92,10 +94,17 @@
 
                 <div class="footer-right">
                     <nav class="footer-quicklinks" aria-label="Footer navigation">
-                        <a href="{% url 'home' %}">Home</a>
-                        <a href="{% url 'about' %}">About</a>
-                        <a href="{% url 'contact' %}">Contact</a>
-                        <a href="{% url 'about' %}#faqs">FAQ</a>
+                        {% if request.lab_site %}
+                            <a href="/">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#services">Services</a>
+                            <a href="#contact">Contact</a>
+                        {% else %}
+                            <a href="{% url 'home' %}">Home</a>
+                            <a href="{% url 'about' %}">About</a>
+                            <a href="{% url 'contact' %}">Contact</a>
+                            <a href="{% url 'about' %}#faqs">FAQ</a>
+                        {% endif %}
                     </nav>
                 </div>
             </div>

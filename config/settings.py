@@ -64,13 +64,26 @@ def _parse_hosts(value: str) -> list[str]:
 ALLOWED_HOSTS = _parse_hosts(
     os.getenv(
         'ALLOWED_HOSTS',
-        'localhost,127.0.0.1',
+        'localhost,127.0.0.1,testserver',
+    )
+)
+
+LAB_HOSTS = _parse_hosts(
+    os.getenv(
+        'LAB_HOSTS',
+        'lab.localhost',
     )
 )
 
 render_hostname = os.getenv('RENDER_EXTERNAL_HOSTNAME', '').strip()
 if render_hostname and render_hostname not in ALLOWED_HOSTS:
     ALLOWED_HOSTS.append(render_hostname)
+
+for lab_host in LAB_HOSTS:
+    if lab_host not in ALLOWED_HOSTS:
+        ALLOWED_HOSTS.append(lab_host)
+
+LAB_CANONICAL_URL = os.getenv('LAB_CANONICAL_URL', '').strip()
 
 
 # Application definition
@@ -89,6 +102,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'config.middleware.LabSiteMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
