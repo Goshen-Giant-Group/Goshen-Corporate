@@ -263,6 +263,9 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
 
 
 # JOIN widget integration
+JOIN_API_BASE_URL = os.getenv('JOIN_API_BASE_URL', 'https://api.join.com')
+JOIN_API_TOKEN = os.getenv('JOIN_API_TOKEN', '')
+JOIN_API_TIMEOUT = int(os.getenv('JOIN_API_TIMEOUT', '15'))
 JOIN_WIDGET_EMBED_CODE = os.getenv('JOIN_WIDGET_EMBED_CODE', '')
 JOIN_CAREERS_URL = os.getenv('JOIN_CAREERS_URL', '')
 
