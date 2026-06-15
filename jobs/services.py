@@ -52,7 +52,7 @@ def _request_json(url: str, *, params: Optional[dict[str, Any]] = None) -> Any:
         'Accept': 'application/json',
     }
 
-    if settings.JOIN_API_TOKEN:
+    if getattr(settings, 'JOIN_API_TOKEN', ''):
         headers['Authorization'] = settings.JOIN_API_TOKEN
 
     request = urllib_request.Request(
@@ -62,7 +62,7 @@ def _request_json(url: str, *, params: Optional[dict[str, Any]] = None) -> Any:
     )
 
     try:
-        with urllib_request.urlopen(request, timeout=settings.JOIN_API_TIMEOUT) as response:
+        with urllib_request.urlopen(request, timeout=getattr(settings, 'JOIN_API_TIMEOUT', 15)) as response:
             payload = response.read().decode('utf-8')
             return json.loads(payload)
     except HTTPError as exc:
@@ -147,7 +147,7 @@ def _map_join_job(job_data: dict[str, Any]) -> dict[str, Any]:
 
 
 def fetch_join_jobs() -> list[dict[str, Any]]:
-    if not settings.JOIN_API_TOKEN:
+    if not getattr(settings, 'JOIN_API_TOKEN', ''):
         return []
 
     jobs: list[dict[str, Any]] = []
@@ -156,7 +156,7 @@ def fetch_join_jobs() -> list[dict[str, Any]]:
 
     while True:
         payload = _request_json(
-            f'{settings.JOIN_API_BASE_URL.rstrip("/")}/jobs',
+            f"{getattr(settings, 'JOIN_API_BASE_URL', 'https://api.join.com').rstrip('/')}/jobs",
             params={
                 'status': 'ONLINE,OFFLINE,ARCHIVED',
                 'content': 'true',
