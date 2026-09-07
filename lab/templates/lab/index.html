@@ -1273,15 +1273,9 @@
 
   .naturis-page .hse-section .container-lg {
     display: grid;
-    grid-template-columns: 1.35fr 0.85fr;
-    gap: 3rem;
-    align-items: center
-  }
-
-  .naturis-page .hse-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.75rem
+    grid-template-columns: 1fr 1.55fr;
+    gap: 2.2rem;
+    align-items: start
   }
 
   .naturis-page .hse-kicker {
@@ -1289,8 +1283,8 @@
     font-size: 0.72rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgba(26, 61, 43, 0.78);
-    margin-bottom: 0.6rem;
+    color: rgba(26, 61, 43, 0.72);
+    margin-bottom: 0.85rem;
     font-weight: 700
   }
 
@@ -1299,16 +1293,7 @@
     font-size: clamp(2rem, 3.8vw, 3.3rem);
     line-height: 0.98;
     color: var(--naturis-forest);
-    margin: 0 0 0.85rem
-  }
-
-  .naturis-page .hse-intro {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: var(--naturis-forest);
-    opacity: 0.92;
-    margin: 0;
-    max-width: 560px
+    margin: 0
   }
 
   .naturis-page .hse-grid {
@@ -1326,13 +1311,7 @@
     align-items: center;
     gap: 0.7rem;
     min-height: 62px;
-    box-shadow: 0 3px 10px rgba(26, 61, 43, 0.09);
-    transition: transform 0.2s ease, box-shadow 0.2s ease
-  }
-
-  .naturis-page .hse-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(26, 61, 43, 0.14)
+    box-shadow: 0 3px 10px rgba(26, 61, 43, 0.09)
   }
 
   .naturis-page .hse-item svg,
@@ -1349,180 +1328,23 @@
     font-weight: 700
   }
 
-  .naturis-page .hse-media {
-    display: flex;
-    justify-content: center;
-    align-items: center
-  }
-
-  /* iPhone Mobile Device Mockup */
-  .naturis-page .iphone-device {
-    position: relative;
-    width: 100%;
-    max-width: 300px;
-    background: #171b18;
-    padding: 10px;
-    border-radius: 46px;
-    box-shadow: 
-      0 28px 65px -14px rgba(13, 26, 18, 0.48),
-      0 10px 24px -8px rgba(0, 0, 0, 0.35),
-      0 0 0 1px rgba(255, 255, 255, 0.16),
-      inset 0 1px 2px rgba(255, 255, 255, 0.22),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.5);
-    border: 3.5px solid #3c453e;
-  }
-
-  .naturis-page .iphone-button {
-    position: absolute;
-    background: #3c453e;
-    z-index: 0;
-    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.25);
-  }
-
-  .naturis-page .iphone-btn-action {
-    top: 75px;
-    left: -6.5px;
-    width: 3.5px;
-    height: 20px;
-    border-radius: 3px 0 0 3px;
-  }
-
-  .naturis-page .iphone-btn-vol-up {
-    top: 108px;
-    left: -6.5px;
-    width: 3.5px;
-    height: 38px;
-    border-radius: 3px 0 0 3px;
-  }
-
-  .naturis-page .iphone-btn-vol-down {
-    top: 156px;
-    left: -6.5px;
-    width: 3.5px;
-    height: 38px;
-    border-radius: 3px 0 0 3px;
-  }
-
-  .naturis-page .iphone-btn-power {
-    top: 118px;
-    right: -6.5px;
-    width: 3.5px;
-    height: 52px;
-    border-radius: 0 3px 3px 0;
-  }
-
-  .naturis-page .iphone-screen {
-    position: relative;
-    width: 100%;
-    background: #000;
-    border-radius: 36px;
-    overflow: hidden;
-    aspect-ratio: 9 / 18.5;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .naturis-page .iphone-dynamic-island {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 82px;
-    height: 22px;
-    background: #000;
-    border-radius: 20px;
-    z-index: 10;
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 8px;
-    padding-right: 9px;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
-  }
-
-  .naturis-page .iphone-sensor {
-    width: 5px;
-    height: 5px;
-    background: #070c12;
-    border-radius: 50%;
-  }
-
-  .naturis-page .iphone-camera {
-    width: 9px;
-    height: 9px;
-    background: radial-gradient(circle at 35% 35%, #1a2d48, #050a12);
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-  }
-
-  .naturis-page .iphone-home-indicator {
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 92px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.78);
-    border-radius: 10px;
-    z-index: 10;
-    pointer-events: none;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
-  }
-
-  .naturis-page .hse-video {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-  }
-
-  @media (max-width: 991px) {
+  @media (max-width:991px) {
     .naturis-page .hse-section .container-lg {
-      grid-template-columns: 1fr;
-      gap: 2.5rem
+      grid-template-columns: 1fr
     }
 
-    .naturis-page .hse-media {
-      margin-top: 0.5rem
-    }
-
-    .naturis-page .iphone-device {
-      max-width: 280px;
-      padding: 9px;
-      border-radius: 42px;
-    }
-
-    .naturis-page .iphone-screen {
-      border-radius: 33px;
-    }
-
-    .naturis-page .iphone-dynamic-island {
-      width: 76px;
-      height: 20px;
-      top: 9px;
-    }
-
-    .naturis-page .iphone-home-indicator {
-      width: 84px;
-      height: 3.5px;
-      bottom: 7px;
+    .naturis-page .hse-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr))
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width:768px) {
     .naturis-page .hse-section {
       padding: 60px 0
     }
 
     .naturis-page .hse-title {
       font-size: 1.8rem
-    }
-
-    .naturis-page .hse-intro {
-      font-size: 0.88rem
     }
 
     .naturis-page .hse-item {
@@ -1533,32 +1355,9 @@
     .naturis-page .hse-item span {
       font-size: 0.82rem
     }
-
-    .naturis-page .iphone-device {
-      max-width: 260px;
-      padding: 8px;
-      border-radius: 38px;
-      border-width: 3px;
-    }
-
-    .naturis-page .iphone-screen {
-      border-radius: 30px;
-    }
-
-    .naturis-page .iphone-dynamic-island {
-      width: 70px;
-      height: 18px;
-      top: 8px;
-    }
-
-    .naturis-page .iphone-home-indicator {
-      width: 78px;
-      height: 3px;
-      bottom: 6px;
-    }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width:640px) {
     .naturis-page .hse-grid {
       grid-template-columns: 1fr
     }
@@ -1579,7 +1378,7 @@
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width:480px) {
     .naturis-page .hse-section {
       padding: 45px 0
     }
@@ -1591,29 +1390,6 @@
 
     .naturis-page .hse-item span {
       font-size: 0.75rem
-    }
-
-    .naturis-page .iphone-device {
-      max-width: 230px;
-      padding: 7px;
-      border-radius: 34px;
-      border-width: 2.5px;
-    }
-
-    .naturis-page .iphone-screen {
-      border-radius: 27px;
-    }
-
-    .naturis-page .iphone-dynamic-island {
-      width: 62px;
-      height: 16px;
-      top: 7px;
-    }
-
-    .naturis-page .iphone-home-indicator {
-      width: 68px;
-      height: 3px;
-      bottom: 5px;
     }
   }
 
@@ -2283,48 +2059,25 @@
   <!-- HEALTH, SAFETY & ENVIRONMENT -->
   <section id="hse" class="hse-section">
     <div class="container-lg">
-      <div class="hse-content">
-        <div class="hse-header">
-          <span class="hse-kicker">Safety First</span>
-          <h2 class="hse-title">Health, Safety &amp; Environment</h2>
-          <p class="hse-intro">We maintain rigorous HSE standards and laboratory safety protocols to ensure a secure,
-            compliant, and hazard-free testing environment.</p>
-        </div>
-        <div class="hse-grid">
-          <div class="hse-item"><i class="bi bi-shield-check"></i><span>Personal Protective Equipment (PPE)
-              protocols</span></div>
-          <div class="hse-item">
-            <svg class="icon-svg" viewBox="0 0 16 16" role="img" focusable="false" aria-hidden="true">
-              <path
-                d="M5.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 0 1H10v3.646l3.854 5.781A1 1 0 0 1 13.021 13H2.98a1 1 0 0 1-.832-1.573L6 5.646V2zm3 4.5V2H7v4.5L3.5 12h9z" />
-            </svg>
-            <span>Chemical handling &amp; storage protocols</span>
-          </div>
-          <div class="hse-item"><i class="bi bi-exclamation-octagon"></i><span>Emergency response procedures</span>
-          </div>
-          <div class="hse-item"><i class="bi bi-fire"></i><span>Fire safety &amp; spill control systems</span></div>
-          <div class="hse-item"><i class="bi bi-recycle"></i><span>Waste segregation &amp; compliant disposal</span></div>
-          <div class="hse-item"><i class="bi bi-eye"></i><span>Eye wash &amp; emergency shower stations</span></div>
-        </div>
+      <div>
+        <span class="hse-kicker">Safety First</span>
+        <h2 class="hse-title">Health, Safety &amp; Environment</h2>
       </div>
-      <div class="hse-media">
-        <div class="iphone-device">
-          <div class="iphone-button iphone-btn-action"></div>
-          <div class="iphone-button iphone-btn-vol-up"></div>
-          <div class="iphone-button iphone-btn-vol-down"></div>
-          <div class="iphone-button iphone-btn-power"></div>
-          <div class="iphone-screen">
-            <div class="iphone-dynamic-island">
-              <div class="iphone-sensor"></div>
-              <div class="iphone-camera"></div>
-            </div>
-            <video class="hse-video" playsinline controls loop muted autoplay preload="metadata">
-              <source src="{% static 'lab/images/labs_video.mp4' %}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="iphone-home-indicator"></div>
-          </div>
+      <div class="hse-grid">
+        <div class="hse-item"><i class="bi bi-shield-check"></i><span>Personal Protective Equipment (PPE)
+            protocols</span></div>
+        <div class="hse-item">
+          <svg class="icon-svg" viewBox="0 0 16 16" role="img" focusable="false" aria-hidden="true">
+            <path
+              d="M5.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 0 1H10v3.646l3.854 5.781A1 1 0 0 1 13.021 13H2.98a1 1 0 0 1-.832-1.573L6 5.646V2zm3 4.5V2H7v4.5L3.5 12h9z" />
+          </svg>
+          <span>Chemical handling &amp; storage protocols</span>
         </div>
+        <div class="hse-item"><i class="bi bi-exclamation-octagon"></i><span>Emergency response procedures</span>
+        </div>
+        <div class="hse-item"><i class="bi bi-fire"></i><span>Fire safety &amp; spill control systems</span></div>
+        <div class="hse-item"><i class="bi bi-recycle"></i><span>Waste segregation &amp; compliant disposal</span></div>
+        <div class="hse-item"><i class="bi bi-eye"></i><span>Eye wash &amp; emergency shower stations</span></div>
       </div>
     </div>
   </section>
