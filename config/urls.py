@@ -3,16 +3,6 @@ URL configuration for config project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from urllib.parse import urljoin
 
@@ -34,6 +24,7 @@ class OldLabPathRedirectView(View):
         target_url = urljoin(target_base, '/')
         return HttpResponsePermanentRedirect(target_url)
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Goshen Corporate (Jobs/Careers)
@@ -44,6 +35,8 @@ urlpatterns = [
     path('careers/jobs/<int:pk>/', jobs_views.job_detail, name='job_detail'),
     path('careers/apply/general/', jobs_views.general_application, name='general_application'),
     path('careers/jobs/<int:pk>/apply/', jobs_views.job_application, name='job_application'),
+
+    # Lab website
     path('lab/', include(('lab.urls', 'lab'), namespace='lab')),
 
     # Retired lab path: redirect to the subhost.

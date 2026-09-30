@@ -6,16 +6,20 @@
 {% block extra_css %}
 <style>
   .naturis-page {
-    --naturis-forest: #1A3D2B;
-    --naturis-sage: #3D6B53;
-    --naturis-moss: #6A9E7A;
-    --naturis-lime: #B8D9A0;
-    --naturis-cream: #F5F0E8;
-    --naturis-sand: #E8E0D0;
-    --naturis-amber: #C8A040;
-    --naturis-white: #FAFAF7;
-    --naturis-ink: #0D1A12;
-    --naturis-gradient: linear-gradient(135deg, var(--naturis-forest), var(--naturis-sage))
+    --naturis-forest: #092337;
+    --naturis-deep: #061a28;
+    --naturis-sage: #40674f;
+    --naturis-moss: #507b62;
+    --naturis-lime: #e4aa41;
+    --naturis-gold-light: #f4c975;
+    --naturis-cream: #f8f5ee;
+    --naturis-sand: #ede7db;
+    --naturis-amber: #f8f5ee;
+    --naturis-white: #ffffff;
+    --naturis-ink: #193044;
+    --naturis-muted: #657584;
+    --naturis-line: #dee5e7;
+    --naturis-gradient: linear-gradient(135deg, #061a28 0%, #092337 55%, #193044 100%);
   }
 
   .naturis-page .lab-hero {
@@ -23,24 +27,24 @@
     color: white;
     padding: 5.5rem 0 4.5rem;
     position: relative;
-    overflow: hidden
+    overflow: hidden;
   }
 
   .naturis-page .lab-hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 78% 38%, rgba(255, 255, 255, .08), transparent 28%), radial-gradient(circle at 20% 72%, rgba(184, 217, 160, .08), transparent 26%);
-    pointer-events: none
+    background: radial-gradient(circle at 78% 38%, rgba(228, 170, 65, .08), transparent 28%), radial-gradient(circle at 20% 72%, rgba(255, 255, 255, .06), transparent 26%);
+    pointer-events: none;
   }
 
   .lab-hero .container-lg {
     position: relative;
-    z-index: 1
+    z-index: 1;
   }
 
   .lab-hero .row {
-    min-height: 540px
+    min-height: 540px;
   }
 
   .lab-hero h1 {
@@ -49,12 +53,13 @@
     line-height: 0.95;
     letter-spacing: -0.03em;
     max-width: 7ch;
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
+    color: #ffffff;
   }
 
   .naturis-page .lab-hero h1 em {
     font-style: italic;
-    color: var(--naturis-lime)
+    color: var(--naturis-lime);
   }
 
   .hero-kicker {
@@ -62,16 +67,17 @@
     font-size: 0.72rem;
     letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.72);
-    margin-bottom: 1.15rem
+    color: var(--naturis-gold-light);
+    margin-bottom: 1.15rem;
+    font-weight: 700;
   }
 
   .hero-lead {
     max-width: 520px;
     font-size: 1rem;
     line-height: 1.75;
-    color: rgba(255, 255, 255, 0.82);
-    margin-bottom: 1.85rem
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 1.85rem;
   }
 
   .hero-stats {
@@ -79,26 +85,26 @@
     gap: 2rem;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin-top: 2rem
+    margin-top: 2rem;
   }
 
   .hero-stat {
-    min-width: 92px
+    min-width: 92px;
   }
 
   .hero-stat-value {
     font-family: 'DM Serif Display', serif;
     font-size: 2rem;
     line-height: 1;
-    color: white;
-    margin-bottom: 0.35rem
+    color: var(--naturis-lime);
+    margin-bottom: 0.35rem;
   }
 
   .hero-stat-label {
     font-size: 0.68rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.58)
+    color: rgba(255, 255, 255, 0.68);
   }
 
   .hero-badge {
@@ -107,187 +113,187 @@
     justify-content: center;
     min-width: 118px;
     padding: 0.7rem 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(228, 170, 65, 0.35);
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(228, 170, 65, 0.08);
     font-family: 'DM Serif Display', serif;
     font-size: 0.82rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: white
+    color: var(--naturis-gold-light);
   }
 
   @media (max-width:991px) {
     .naturis-page .lab-hero .row {
-      min-height: auto
+      min-height: auto;
     }
 
     .naturis-page .lab-hero {
-      padding: 4.5rem 0 4rem
+      padding: 4.5rem 0 4rem;
     }
 
     .naturis-page .hero-lead {
-      max-width: none
+      max-width: none;
     }
 
     .naturis-page .hero-stats {
-      gap: 1.25rem
+      gap: 1.25rem;
     }
 
     .naturis-page .hero-badge {
-      margin-top: 1rem
+      margin-top: 1rem;
     }
   }
 
   @media (max-width:768px) {
     .naturis-page .lab-hero {
-      padding: 4rem 0 3.5rem
+      padding: 4rem 0 3.5rem;
     }
 
     .naturis-page .lab-hero h1 {
       font-size: 2.5rem;
-      margin-bottom: 0.85rem
+      margin-bottom: 0.85rem;
     }
 
     .naturis-page .hero-kicker {
       font-size: 0.65rem;
-      margin-bottom: 1rem
+      margin-bottom: 1rem;
     }
 
     .naturis-page .hero-lead {
       font-size: 0.92rem;
       line-height: 1.65;
-      margin-bottom: 1.5rem
+      margin-bottom: 1.5rem;
     }
 
     .naturis-page .hero-stats {
       gap: 1.5rem;
-      margin-top: 1.5rem
+      margin-top: 1.5rem;
     }
 
     .naturis-page .hero-stat-value {
-      font-size: 1.6rem
+      font-size: 1.6rem;
     }
 
     .naturis-page .hero-stat-label {
-      font-size: 0.62rem
+      font-size: 0.62rem;
     }
 
     .naturis-page .hero-badge {
       min-width: 110px;
       padding: 0.6rem 0.9rem;
-      font-size: 0.75rem
+      font-size: 0.75rem;
     }
   }
 
   @media (max-width:640px) {
     .naturis-page .lab-hero {
-      padding: 3.5rem 0 3rem
+      padding: 3.5rem 0 3rem;
     }
 
     .naturis-page .lab-hero .container-lg {
-      padding: 0 1rem
+      padding: 0 1rem;
     }
 
     .naturis-page .lab-hero h1 {
       font-size: 2rem;
       max-width: 8ch;
-      margin-bottom: 0.75rem
+      margin-bottom: 0.75rem;
     }
 
     .naturis-page .hero-kicker {
       font-size: 0.6rem;
-      margin-bottom: 0.9rem
+      margin-bottom: 0.9rem;
     }
 
     .naturis-page .hero-lead {
       font-size: 0.86rem;
       line-height: 1.6;
-      margin-bottom: 1.25rem
+      margin-bottom: 1.25rem;
     }
 
     .naturis-page .hero-stats {
       gap: 1rem;
-      margin-top: 1.25rem
+      margin-top: 1.25rem;
     }
 
     .naturis-page .hero-stat {
-      min-width: 80px
+      min-width: 80px;
     }
 
     .naturis-page .hero-stat-value {
       font-size: 1.4rem;
-      margin-bottom: 0.25rem
+      margin-bottom: 0.25rem;
     }
 
     .naturis-page .hero-stat-label {
-      font-size: 0.56rem
+      font-size: 0.56rem;
     }
 
     .naturis-page .hero-badge {
       min-width: 100px;
       padding: 0.5rem 0.8rem;
-      font-size: 0.68rem
+      font-size: 0.68rem;
     }
   }
 
   @media (max-width:480px) {
     .naturis-page .lab-hero {
-      padding: 3rem 0 2.5rem
+      padding: 3rem 0 2.5rem;
     }
 
     .naturis-page .lab-hero h1 {
       font-size: 1.6rem;
-      line-height: 1.1
+      line-height: 1.1;
     }
 
     .naturis-page .hero-lead {
       font-size: 0.8rem;
-      margin-bottom: 1rem
+      margin-bottom: 1rem;
     }
 
     .naturis-page .hero-stats {
       flex-direction: column;
-      gap: 0.8rem
+      gap: 0.8rem;
     }
 
     .naturis-page .hero-stat {
-      min-width: 70px
+      min-width: 70px;
     }
 
     .naturis-page .hero-stat-value {
-      font-size: 1.2rem
+      font-size: 1.2rem;
     }
 
     .naturis-page .hero-badge {
       width: 100%;
-      text-align: center
+      text-align: center;
     }
   }
 
   .naturis-page .lab-section {
-    padding: 80px 0
+    padding: 80px 0;
   }
 
   .naturis-page .lab-section#about {
-    background: var(--naturis-cream)
+    background: var(--naturis-cream);
   }
 
   @media (max-width:768px) {
     .naturis-page .lab-section {
-      padding: 60px 0
+      padding: 60px 0;
     }
   }
 
   @media (max-width:640px) {
     .naturis-page .lab-section {
-      padding: 50px 0
+      padding: 50px 0;
     }
   }
 
   @media (max-width:480px) {
     .naturis-page .lab-section {
-      padding: 40px 0
+      padding: 40px 0;
     }
   }
 
@@ -295,11 +301,11 @@
     display: grid;
     grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
     gap: 2.5rem;
-    align-items: center
+    align-items: center;
   }
 
   .about-text {
-    max-width: 640px
+    max-width: 640px;
   }
 
   .naturis-page .about-text .section-tag {
@@ -308,7 +314,7 @@
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    font-size: 0.82rem
+    font-size: 0.82rem;
   }
 
   .naturis-page .about-text h2 {
@@ -316,7 +322,7 @@
     font-size: clamp(2.2rem, 4vw, 3.8rem);
     line-height: 0.98;
     color: var(--naturis-forest);
-    margin-bottom: 1.25rem
+    margin-bottom: 1.25rem;
   }
 
   .naturis-page .about-text p {
@@ -324,7 +330,7 @@
     line-height: 1.85;
     color: var(--naturis-ink);
     margin-bottom: 1.1rem;
-    max-width: 58ch
+    max-width: 58ch;
   }
 
   .naturis-page .highlight {
@@ -336,85 +342,85 @@
     line-height: 1.7;
     color: var(--naturis-forest);
     font-weight: 700;
-    max-width: 620px
+    max-width: 620px;
   }
 
   .about-visual {
-    width: 100%
+    width: 100%;
   }
 
   @media (max-width:991px) {
     .naturis-page .lab-section#about .container-lg {
       grid-template-columns: 1fr;
-      gap: 2rem
+      gap: 2rem;
     }
 
     .naturis-page .about-text {
-      max-width: none
+      max-width: none;
     }
 
     .naturis-page .about-visual {
       max-width: 600px;
-      margin: 0 auto
+      margin: 0 auto;
     }
   }
 
   @media (max-width:768px) {
     .naturis-page .lab-section#about {
-      padding: 60px 0
+      padding: 60px 0;
     }
 
     .naturis-page .about-text .section-tag {
       font-size: 0.76rem;
-      margin-bottom: 0.7rem
+      margin-bottom: 0.7rem;
     }
 
     .naturis-page .about-text h2 {
       font-size: 2rem;
-      margin-bottom: 1rem
+      margin-bottom: 1rem;
     }
 
     .naturis-page .about-text p {
       font-size: 0.92rem;
       line-height: 1.75;
-      margin-bottom: 1rem
+      margin-bottom: 1rem;
     }
 
     .naturis-page .highlight {
       font-size: 0.96rem;
       padding: 0.2rem 0 0.2rem 0.9rem;
       margin: 1rem 0 0.9rem;
-      border-left-width: 2px
+      border-left-width: 2px;
     }
   }
 
   @media (max-width:640px) {
     .naturis-page .about-text .section-tag {
-      font-size: 0.7rem
+      font-size: 0.7rem;
     }
 
     .naturis-page .about-text h2 {
       font-size: 1.6rem;
-      line-height: 1.1
+      line-height: 1.1;
     }
 
     .naturis-page .about-text p {
-      font-size: 0.88rem
+      font-size: 0.88rem;
     }
 
     .naturis-page .highlight {
       font-size: 0.88rem;
-      padding: 0.15rem 0 0.15rem 0.75rem
+      padding: 0.15rem 0 0.15rem 0.75rem;
     }
   }
 
   @media (max-width:480px) {
     .naturis-page .lab-section#about {
-      padding: 50px 0
+      padding: 50px 0;
     }
 
     .naturis-page .about-visual {
-      max-width: 100%
+      max-width: 100%;
     }
   }
 
@@ -422,11 +428,11 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
-    margin-top: 2rem
+    margin-top: 2rem;
   }
 
   .naturis-page .lab-section#services {
-    background: var(--naturis-white)
+    background: var(--naturis-white);
   }
 
   .naturis-page .lab-section#services .section-title {
@@ -434,41 +440,44 @@
     font-size: clamp(2.1rem, 3.4vw, 3.1rem);
     text-align: left;
     margin-bottom: 0.8rem;
-    color: var(--naturis-forest)
+    color: var(--naturis-forest);
   }
 
   .naturis-page .services-intro {
     max-width: 620px;
     color: var(--naturis-ink);
     line-height: 1.7;
-    margin-bottom: 2rem
+    margin-bottom: 2rem;
   }
 
   .naturis-page .service-card {
-    background: var(--naturis-sand);
+    background: #ffffff;
     padding: 1.35rem 1.2rem 1.4rem;
     border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(26, 61, 43, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 12px rgba(9, 35, 55, 0.06);
+    border: 1px solid var(--naturis-line);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     text-decoration: none;
     color: var(--naturis-forest);
     min-height: 290px;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
   }
 
   .naturis-page .service-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 26px rgba(26, 61, 43, 0.16);
-    text-decoration: none
+    box-shadow: 0 12px 26px rgba(9, 35, 55, 0.12);
+    border-color: var(--naturis-lime);
+    text-decoration: none;
   }
 
   .naturis-page .svc-num {
     font-size: 0.72rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(26, 61, 43, 0.55);
-    margin-bottom: 1rem
+    color: var(--naturis-lime);
+    font-weight: 700;
+    margin-bottom: 1rem;
   }
 
   .naturis-page .svc-icon {
@@ -477,16 +486,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(26, 61, 43, 0.06);
+    background: rgba(228, 170, 65, 0.12);
     border-radius: 8px;
     margin-bottom: 1.1rem;
-    border: none
+    border: none;
   }
 
   .naturis-page .svc-icon i {
     font-size: 1.35rem;
     color: var(--naturis-forest);
-    font-weight: 600
+    font-weight: 600;
   }
 
   .svc-icon i,
@@ -496,7 +505,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1;
-    display: inline-block
+    display: inline-block;
   }
 
   .icon-svg {
@@ -504,7 +513,7 @@
     height: 1.25em;
     display: inline-block;
     vertical-align: middle;
-    fill: currentColor
+    fill: currentColor;
   }
 
   .naturis-page .service-card h5 {
@@ -512,7 +521,7 @@
     font-size: 1.08rem;
     line-height: 1.15;
     color: var(--naturis-forest);
-    margin: 0 0 0.9rem
+    margin: 0 0 0.9rem;
   }
 
   .naturis-page .service-points {
@@ -520,29 +529,28 @@
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
   }
 
   .naturis-page .service-points li {
     padding: 0.62rem 0;
-    border-top: 1px solid rgba(26, 61, 43, 0.12);
+    border-top: 1px solid var(--naturis-line);
     font-size: 0.86rem;
     line-height: 1.45;
-    color: var(--naturis-forest);
-    opacity: 0.82
+    color: var(--naturis-ink);
   }
 
   .service-points li:first-child {
-    border-top: none
+    border-top: none;
   }
 
   .naturis-page .info-card {
     background: var(--naturis-forest);
     color: var(--naturis-white);
     padding: 2rem 1.75rem;
-    border-radius: 6px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.08)
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(9, 35, 55, 0.16);
+    border: 1px solid rgba(228, 170, 65, 0.2);
   }
 
   .naturis-page .info-row {
@@ -550,11 +558,11 @@
     justify-content: space-between;
     gap: 1.5rem;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .info-row:last-child {
-    border-bottom: none
+    border-bottom: none;
   }
 
   .naturis-page .info-key {
@@ -562,7 +570,7 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: rgba(250, 250, 247, 0.72);
-    min-width: 110px
+    min-width: 110px;
   }
 
   .naturis-page .info-val {
@@ -570,109 +578,109 @@
     line-height: 1.6;
     color: var(--naturis-white);
     text-align: right;
-    max-width: 260px
+    max-width: 260px;
   }
 
   @media (max-width:900px) {
     .naturis-page .services-grid {
-      grid-template-columns: repeat(3, 1fr)
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .naturis-page .lab-hero h1 {
-      font-size: 32px
+      font-size: 32px;
     }
   }
 
   @media (max-width:768px) {
     .naturis-page .services-grid {
-      grid-template-columns: repeat(2, 1fr)
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .naturis-page .lab-section#services .section-title {
-      font-size: 2rem
+      font-size: 2rem;
     }
 
     .naturis-page .service-card {
       padding: 1.1rem 1rem;
-      min-height: 240px
+      min-height: 240px;
     }
 
     .naturis-page .service-card h5 {
-      font-size: 0.98rem
+      font-size: 0.98rem;
     }
 
     .naturis-page .svc-icon {
       width: 40px;
-      height: 40px
+      height: 40px;
     }
 
     .naturis-page .service-points li {
-      font-size: 0.8rem
+      font-size: 0.8rem;
     }
   }
 
   @media (max-width:640px) {
     .naturis-page .services-grid {
-      grid-template-columns: 1fr
+      grid-template-columns: 1fr;
     }
 
     .naturis-page .lab-section#services {
-      padding: 60px 0
+      padding: 60px 0;
     }
 
     .naturis-page .lab-hero {
-      padding: 4rem 0 3rem
+      padding: 4rem 0 3rem;
     }
 
     .naturis-page .lab-hero h1 {
-      font-size: 2.2rem
+      font-size: 2.2rem;
     }
 
     .naturis-page .service-card {
       padding: 1rem;
-      min-height: 220px
+      min-height: 220px;
     }
 
     .naturis-page .service-card h5 {
-      font-size: 0.92rem
+      font-size: 0.92rem;
     }
 
     .naturis-page .svc-num {
-      font-size: 0.65rem
+      font-size: 0.65rem;
     }
 
     .naturis-page .service-points li {
       font-size: 0.78rem;
-      padding: 0.5rem 0
+      padding: 0.5rem 0;
     }
   }
 
   @media (max-width:480px) {
     .naturis-page .service-card {
       padding: 0.9rem;
-      min-height: 200px
+      min-height: 200px;
     }
 
     .naturis-page .service-card h5 {
-      font-size: 0.88rem
+      font-size: 0.88rem;
     }
 
     .naturis-page .service-points li {
-      font-size: 0.75rem
+      font-size: 0.75rem;
     }
   }
 
   .naturis-page .quality-section {
     background: var(--naturis-gradient);
     color: white;
-    padding: 80px 0
+    padding: 80px 0;
   }
 
   .naturis-page .quality-section .container-lg {
     display: grid;
     grid-template-columns: 1.1fr 1.4fr;
     gap: 3rem;
-    align-items: start
+    align-items: start;
   }
 
   .naturis-page .quality-kicker {
@@ -680,9 +688,9 @@
     font-size: 0.72rem;
     letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.72);
+    color: var(--naturis-lime);
     margin-bottom: 0.85rem;
-    font-weight: 700
+    font-weight: 700;
   }
 
   .naturis-page .quality-title {
@@ -690,7 +698,7 @@
     font-size: clamp(2.2rem, 4vw, 3.8rem);
     line-height: 0.98;
     color: white;
-    margin-bottom: 1.5rem
+    margin-bottom: 1.5rem;
   }
 
   .naturis-page .quality-text {
@@ -698,7 +706,7 @@
     line-height: 1.85;
     color: rgba(255, 255, 255, 0.88);
     margin-bottom: 2rem;
-    max-width: 540px
+    max-width: 540px;
   }
 
   .standards-list {
@@ -707,13 +715,13 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem
+    gap: 1.2rem;
   }
 
   .standard-item {
     display: flex;
     align-items: flex-start;
-    gap: 1rem
+    gap: 1rem;
   }
 
   .standard-icon {
@@ -722,185 +730,188 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(228, 170, 65, 0.15);
+    border: 1px solid rgba(228, 170, 65, 0.3);
     border-radius: 6px;
     flex-shrink: 0;
-    margin-top: 0.1rem
+    margin-top: 0.1rem;
   }
 
-  .standard-icon i {
+  .standard-icon i,
+  .standard-icon svg {
     font-size: 1.1rem;
-    color: white
+    color: var(--naturis-lime);
+    fill: var(--naturis-lime);
   }
 
   .standard-info h4 {
     margin: 0 0 0.25rem;
     font-size: 0.95rem;
     font-weight: 700;
-    color: white
+    color: white;
   }
 
   .standard-info p {
     margin: 0;
     font-size: 0.82rem;
     color: rgba(255, 255, 255, 0.72);
-    line-height: 1.45
+    line-height: 1.45;
   }
 
   .quality-practices {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem
+    gap: 1.2rem;
   }
 
   .practice-box {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-left: 3px solid var(--naturis-lime);
     padding: 1.25rem;
     border-radius: 8px;
-    backdrop-filter: blur(10px)
+    backdrop-filter: blur(10px);
   }
 
   .practice-box p {
     margin: 0;
     font-size: 0.9rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.88)
+    color: rgba(255, 255, 255, 0.88);
   }
 
   @media (max-width:991px) {
     .naturis-page .quality-section .container-lg {
       grid-template-columns: 1fr;
-      gap: 2rem
+      gap: 2rem;
     }
 
     .naturis-page .quality-practices {
-      grid-template-columns: repeat(2, 1fr)
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media (max-width:768px) {
     .naturis-page .quality-section {
-      padding: 60px 0
+      padding: 60px 0;
     }
 
     .naturis-page .quality-title {
       font-size: 2.2rem;
-      margin-bottom: 1.25rem
+      margin-bottom: 1.25rem;
     }
 
     .naturis-page .quality-text {
       font-size: 0.9rem;
       line-height: 1.75;
-      margin-bottom: 1.5rem
+      margin-bottom: 1.5rem;
     }
 
     .naturis-page .quality-practices {
       grid-template-columns: 1fr;
-      gap: 1rem
+      gap: 1rem;
     }
 
     .naturis-page .practice-box {
-      padding: 1rem
+      padding: 1rem;
     }
 
     .naturis-page .practice-box p {
       font-size: 0.85rem;
-      line-height: 1.5
+      line-height: 1.5;
     }
 
     .naturis-page .standards-list {
-      gap: 1rem
+      gap: 1rem;
     }
 
     .naturis-page .standard-item {
-      gap: 0.85rem
+      gap: 0.85rem;
     }
 
     .naturis-page .standard-icon {
       width: 36px;
-      height: 36px
+      height: 36px;
     }
 
     .naturis-page .standard-info h4 {
-      font-size: 0.9rem
+      font-size: 0.9rem;
     }
 
     .naturis-page .standard-info p {
-      font-size: 0.76rem
+      font-size: 0.76rem;
     }
   }
 
   @media (max-width:640px) {
     .naturis-page .quality-section {
-      padding: 50px 0
+      padding: 50px 0;
     }
 
     .naturis-page .quality-title {
-      font-size: 1.8rem
+      font-size: 1.8rem;
     }
 
     .naturis-page .quality-kicker {
-      font-size: 0.66rem
+      font-size: 0.66rem;
     }
 
     .naturis-page .quality-text {
       font-size: 0.82rem;
       line-height: 1.6;
-      margin-bottom: 1.25rem
+      margin-bottom: 1.25rem;
     }
 
     .naturis-page .practice-box {
       padding: 0.9rem;
-      gap: 0.5rem
+      gap: 0.5rem;
     }
 
     .naturis-page .practice-box p {
-      font-size: 0.78rem
+      font-size: 0.78rem;
     }
 
     .naturis-page .standards-list {
-      gap: 0.85rem
+      gap: 0.85rem;
     }
 
     .naturis-page .standard-icon {
       width: 32px;
-      height: 32px
+      height: 32px;
     }
 
     .naturis-page .standard-icon i {
-      font-size: 0.95rem
+      font-size: 0.95rem;
     }
 
     .naturis-page .standard-info h4 {
       font-size: 0.82rem;
-      margin-bottom: 0.2rem
+      margin-bottom: 0.2rem;
     }
 
     .naturis-page .standard-info p {
       font-size: 0.7rem;
-      line-height: 1.3
+      line-height: 1.3;
     }
   }
 
   @media (max-width:480px) {
     .naturis-page .quality-section {
-      padding: 40px 0
+      padding: 40px 0;
     }
 
     .naturis-page .quality-section::before {
-      display: none
+      display: none;
     }
   }
 
   .naturis-page .team-section {
     background: var(--naturis-cream);
-    padding: 80px 0
+    padding: 80px 0;
   }
 
   .team-section .container-lg {
-    max-width: 1140px
+    max-width: 1140px;
   }
 
   .naturis-page .team-kicker {
@@ -910,7 +921,7 @@
     text-transform: uppercase;
     color: var(--naturis-sage);
     margin-bottom: 0.85rem;
-    font-weight: 700
+    font-weight: 700;
   }
 
   .naturis-page .team-title {
@@ -918,11 +929,11 @@
     font-size: clamp(2.2rem, 4vw, 3.8rem);
     line-height: 0.98;
     color: var(--naturis-forest);
-    margin-bottom: 2.5rem
+    margin-bottom: 2.5rem;
   }
 
   .naturis-page .team-section .container-lg {
-    text-align: center
+    text-align: center;
   }
 
   .team-grid {
@@ -933,14 +944,15 @@
     justify-items: stretch;
     max-width: 1000px;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
   }
 
   .naturis-page .team-card {
     background: var(--naturis-white);
     border-radius: 12px;
     padding: 1.5rem 1.2rem;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 4px 14px rgba(9, 35, 55, 0.06);
+    border: 1px solid var(--naturis-line);
     text-align: center;
     transition: all 0.3s;
     border-bottom: 3px solid var(--naturis-lime);
@@ -950,18 +962,19 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-width: 0
+    min-width: 0;
   }
 
   .team-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-md)
+    box-shadow: 0 10px 24px rgba(9, 35, 55, 0.12);
   }
 
   .naturis-page .team-avatar {
     width: 60px;
     height: 60px;
     background: var(--naturis-gradient);
+    border: 2px solid var(--naturis-lime);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -969,14 +982,14 @@
     margin: 0 auto 1.25rem;
     font-size: 1.4rem;
     font-weight: 700;
-    color: white
+    color: var(--naturis-lime);
   }
 
   .naturis-page .team-name {
     font-size: 1.02rem;
     font-weight: 700;
     color: var(--naturis-forest);
-    margin: 0 0 0.35rem
+    margin: 0 0 0.35rem;
   }
 
   .naturis-page .team-role {
@@ -985,7 +998,7 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin: 0 0 1rem;
-    font-weight: 600
+    font-weight: 600;
   }
 
   .naturis-page .team-info {
@@ -994,7 +1007,7 @@
     color: var(--naturis-ink);
     margin: 0;
     overflow-wrap: anywhere;
-    word-break: break-word
+    word-break: break-word;
   }
 
   .naturis-page .team-experience {
@@ -1004,133 +1017,137 @@
     gap: 0.35rem;
     margin-top: 0.75rem;
     font-size: 0.75rem;
-    color: var(--naturis-sage);
-    font-weight: 600
+    color: var(--naturis-forest);
+    font-weight: 600;
+  }
+
+  .naturis-page .team-experience i {
+    color: var(--naturis-lime);
   }
 
   @media (max-width: 1200px) {
     .naturis-page .team-grid {
-      grid-template-columns: repeat(3, 1fr)
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
   @media (max-width: 991px) {
     .naturis-page .team-grid {
-      grid-template-columns: repeat(2, 1fr)
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .naturis-page .team-card {
-      height: 320px
+      height: 320px;
     }
   }
 
   @media (max-width: 768px) {
     .naturis-page .team-section {
-      padding: 60px 0
+      padding: 60px 0;
     }
 
     .naturis-page .team-grid {
       grid-template-columns: 1fr;
-      max-width: 340px
+      max-width: 340px;
     }
 
     .naturis-page .team-title {
-      font-size: 2rem
+      font-size: 2rem;
     }
 
     .naturis-page .team-card {
       height: 300px;
-      padding: 1.2rem 1rem
+      padding: 1.2rem 1rem;
     }
 
     .naturis-page .team-name {
-      font-size: 0.9rem
+      font-size: 0.9rem;
     }
 
     .naturis-page .team-role {
-      font-size: 0.72rem
+      font-size: 0.72rem;
     }
 
     .naturis-page .team-info {
-      font-size: 0.7rem
+      font-size: 0.7rem;
     }
   }
 
   @media (max-width:640px) {
     .naturis-page .team-section .container-lg {
-      padding: 0 1rem
+      padding: 0 1rem;
     }
 
     .naturis-page .team-grid {
-      gap: 1rem
+      gap: 1rem;
     }
 
     .naturis-page .team-card {
       height: 280px;
-      padding: 1rem 0.85rem
+      padding: 1rem 0.85rem;
     }
 
     .naturis-page .team-avatar {
       width: 44px;
       height: 44px;
       font-size: 1rem;
-      margin-bottom: 0.7rem
+      margin-bottom: 0.7rem;
     }
 
     .naturis-page .team-name {
       font-size: 0.86rem;
-      margin-bottom: 0.15rem
+      margin-bottom: 0.15rem;
     }
 
     .naturis-page .team-role {
       font-size: 0.7rem;
-      margin-bottom: 0.55rem
+      margin-bottom: 0.55rem;
     }
 
     .naturis-page .team-info {
       font-size: 0.66rem;
-      line-height: 1.32
+      line-height: 1.32;
     }
 
     .naturis-page .team-experience {
-      font-size: 0.64rem
+      font-size: 0.64rem;
     }
   }
 
   @media (max-width:480px) {
     .naturis-page .team-grid {
       max-width: 100%;
-      gap: 0.75rem
+      gap: 0.75rem;
     }
 
     .naturis-page .team-card {
       height: 250px;
-      padding: 0.8rem 0.7rem
+      padding: 0.8rem 0.7rem;
     }
 
     .naturis-page .team-avatar {
       width: 40px;
       height: 40px;
       font-size: 0.9rem;
-      margin-bottom: 0.55rem
+      margin-bottom: 0.55rem;
     }
 
     .naturis-page .team-name {
-      font-size: 0.82rem
+      font-size: 0.82rem;
     }
 
     .naturis-page .team-role {
-      font-size: 0.65rem
+      font-size: 0.65rem;
     }
 
     .naturis-page .team-info {
-      font-size: 0.62rem
+      font-size: 0.62rem;
     }
   }
 
   .naturis-page .client-section {
     background: var(--naturis-cream);
-    padding: 80px 0
+    padding: 80px 0;
   }
 
   .naturis-page .client-kicker {
@@ -1140,7 +1157,7 @@
     text-transform: uppercase;
     color: var(--naturis-sage);
     margin-bottom: 0.85rem;
-    font-weight: 700
+    font-weight: 700;
   }
 
   .naturis-page .client-title {
@@ -1148,7 +1165,7 @@
     font-size: clamp(2.2rem, 4vw, 3.6rem);
     line-height: 0.98;
     color: var(--naturis-forest);
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
   }
 
   .naturis-page .client-intro {
@@ -1156,31 +1173,32 @@
     font-size: 0.95rem;
     line-height: 1.75;
     color: var(--naturis-ink);
-    margin-bottom: 2rem
+    margin-bottom: 2rem;
   }
 
   .client-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.85rem
+    gap: 0.85rem;
   }
 
   .naturis-page .client-card {
-    background: var(--naturis-sand);
+    background: var(--naturis-cream);
     border-radius: 8px;
     padding: 1rem 1.1rem;
     display: flex;
     align-items: center;
     gap: 0.85rem;
-    border: 1px solid rgba(26, 61, 43, 0.12);
+    border: 1px solid var(--naturis-sand);
     min-height: 72px;
-    box-shadow: 0 3px 10px rgba(26, 61, 43, 0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease
+    box-shadow: 0 2px 8px rgba(9, 35, 55, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   }
 
   .naturis-page .client-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 7px 18px rgba(26, 61, 43, 0.13)
+    border-color: var(--naturis-lime);
+    box-shadow: 0 6px 16px rgba(9, 35, 55, 0.10);
   }
 
   .naturis-page .client-icon {
@@ -1190,13 +1208,13 @@
     align-items: center;
     justify-content: center;
     border-radius: 6px;
-    background: rgba(26, 61, 43, 0.12);
+    background: rgba(9, 35, 55, 0.08);
     color: var(--naturis-forest);
-    flex-shrink: 0
+    flex-shrink: 0;
   }
 
   .client-icon i {
-    font-size: 0.85rem
+    font-size: 0.85rem;
   }
 
   .naturis-page .client-label {
@@ -1204,78 +1222,78 @@
     line-height: 1.35;
     color: var(--naturis-forest);
     font-weight: 700;
-    margin: 0
+    margin: 0;
   }
 
   @media (max-width:991px) {
     .naturis-page .client-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr))
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
   @media (max-width:768px) {
     .naturis-page .client-section {
-      padding: 60px 0
+      padding: 60px 0;
     }
 
     .naturis-page .client-title {
-      font-size: 2rem
+      font-size: 2rem;
     }
 
     .naturis-page .client-grid {
-      grid-template-columns: 1fr
+      grid-template-columns: 1fr;
     }
 
     .naturis-page .client-card {
       padding: 0.9rem 1rem;
-      min-height: 64px
+      min-height: 64px;
     }
 
     .naturis-page .client-label {
-      font-size: 0.82rem
+      font-size: 0.82rem;
     }
 
     .naturis-page .client-icon {
       width: 24px;
-      height: 24px
+      height: 24px;
     }
   }
 
   @media (max-width:640px) {
     .naturis-page .client-grid {
-      gap: 0.6rem
+      gap: 0.6rem;
     }
 
     .naturis-page .client-card {
       padding: 0.8rem;
-      min-height: 60px
+      min-height: 60px;
     }
 
     .naturis-page .client-label {
       font-size: 0.78rem;
-      line-height: 1.3
+      line-height: 1.3;
     }
 
     .naturis-page .client-icon {
       width: 22px;
-      height: 22px
+      height: 22px;
     }
 
     .naturis-page .client-icon i {
-      font-size: 0.78rem
+      font-size: 0.78rem;
     }
   }
 
   .naturis-page .hse-section {
-    background: var(--naturis-amber);
-    padding: 80px 0
+    background: var(--naturis-cream);
+    padding: 80px 0;
   }
 
   .naturis-page .hse-section .container-lg {
     display: grid;
     grid-template-columns: 1fr 1.55fr;
     gap: 2.2rem;
-    align-items: start
+    align-items: start;
   }
 
   .naturis-page .hse-kicker {
@@ -1283,9 +1301,9 @@
     font-size: 0.72rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgba(26, 61, 43, 0.72);
+    color: var(--naturis-sage);
     margin-bottom: 0.85rem;
-    font-weight: 700
+    font-weight: 700;
   }
 
   .naturis-page .hse-title {
@@ -1293,103 +1311,104 @@
     font-size: clamp(2rem, 3.8vw, 3.3rem);
     line-height: 0.98;
     color: var(--naturis-forest);
-    margin: 0
+    margin: 0;
   }
 
   .naturis-page .hse-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.85rem
+    gap: 0.85rem;
   }
 
   .naturis-page .hse-item {
-    background: var(--naturis-lime);
-    border: 1px solid rgba(27, 94, 32, 0.14);
+    background: #ffffff;
+    border: 1px solid var(--naturis-line);
+    border-left: 3px solid var(--naturis-sage);
     border-radius: 8px;
     padding: 1rem 1rem;
     display: flex;
     align-items: center;
     gap: 0.7rem;
     min-height: 62px;
-    box-shadow: 0 3px 10px rgba(26, 61, 43, 0.09)
+    box-shadow: 0 2px 8px rgba(9, 35, 55, 0.04);
   }
 
   .naturis-page .hse-item svg,
   .naturis-page .hse-item i {
     font-size: 0.95rem;
-    color: var(--naturis-forest);
-    flex-shrink: 0
+    color: var(--naturis-sage);
+    flex-shrink: 0;
   }
 
   .naturis-page .hse-item span {
     font-size: 0.88rem;
     line-height: 1.35;
     color: var(--naturis-forest);
-    font-weight: 700
+    font-weight: 700;
   }
 
   @media (max-width:991px) {
     .naturis-page .hse-section .container-lg {
-      grid-template-columns: 1fr
+      grid-template-columns: 1fr;
     }
 
     .naturis-page .hse-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr))
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
   @media (max-width:768px) {
     .naturis-page .hse-section {
-      padding: 60px 0
+      padding: 60px 0;
     }
 
     .naturis-page .hse-title {
-      font-size: 1.8rem
+      font-size: 1.8rem;
     }
 
     .naturis-page .hse-item {
       padding: 0.9rem;
-      min-height: 56px
+      min-height: 56px;
     }
 
     .naturis-page .hse-item span {
-      font-size: 0.82rem
+      font-size: 0.82rem;
     }
   }
 
   @media (max-width:640px) {
     .naturis-page .hse-grid {
-      grid-template-columns: 1fr
+      grid-template-columns: 1fr;
     }
 
     .naturis-page .hse-item {
       padding: 0.8rem;
-      min-height: 52px
+      min-height: 52px;
     }
 
     .naturis-page .hse-item svg,
     .naturis-page .hse-item i {
-      font-size: 0.88rem
+      font-size: 0.88rem;
     }
 
     .naturis-page .hse-item span {
       font-size: 0.78rem;
-      line-height: 1.3
+      line-height: 1.3;
     }
   }
 
   @media (max-width:480px) {
     .naturis-page .hse-section {
-      padding: 45px 0
+      padding: 45px 0;
     }
 
     .naturis-page .hse-item {
       padding: 0.7rem;
-      min-height: 48px
+      min-height: 48px;
     }
 
     .naturis-page .hse-item span {
-      font-size: 0.75rem
+      font-size: 0.75rem;
     }
   }
 
@@ -1398,27 +1417,27 @@
     background: var(--naturis-gradient);
     color: #fff;
     padding: 90px 0 70px;
-    overflow: hidden
+    overflow: hidden;
   }
 
   .naturis-page .contact-section::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 10% 15%, rgba(255, 255, 255, 0.06), transparent 35%), radial-gradient(circle at 88% 24%, rgba(184, 217, 160, 0.1), transparent 38%);
-    pointer-events: none
+    background: radial-gradient(circle at 10% 15%, rgba(255, 255, 255, 0.06), transparent 35%), radial-gradient(circle at 88% 24%, rgba(228, 170, 65, 0.1), transparent 38%);
+    pointer-events: none;
   }
 
   .contact-section .container-lg {
     position: relative;
-    z-index: 1
+    z-index: 1;
   }
 
   .contact-grid {
     display: grid;
     grid-template-columns: 1.05fr 1fr;
     gap: 2.4rem;
-    align-items: start
+    align-items: start;
   }
 
   .naturis-page .contact-kicker {
@@ -1428,16 +1447,16 @@
     font-size: 0.68rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.62);
+    color: var(--naturis-lime);
     margin-bottom: 1rem;
-    font-weight: 700
+    font-weight: 700;
   }
 
   .contact-kicker::before {
     content: '';
     width: 34px;
     height: 1px;
-    background: rgba(255, 255, 255, 0.32)
+    background: rgba(228, 170, 65, 0.4);
   }
 
   .naturis-page .contact-title {
@@ -1445,7 +1464,7 @@
     font-size: clamp(2.1rem, 4vw, 3.6rem);
     line-height: 0.96;
     margin: 0 0 1rem;
-    color: #fff
+    color: #fff;
   }
 
   .naturis-page .contact-intro {
@@ -1453,14 +1472,14 @@
     color: rgba(255, 255, 255, 0.82);
     font-size: 0.96rem;
     line-height: 1.75;
-    margin-bottom: 1.8rem
+    margin-bottom: 1.8rem;
   }
 
   .naturis-page .contact-list {
     list-style: none;
     margin: 0;
     padding: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08)
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .naturis-page .contact-list li {
@@ -1468,14 +1487,14 @@
     grid-template-columns: 20px 1fr;
     gap: 0.95rem;
     padding: 0.95rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .naturis-page .contact-list i {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     color: var(--naturis-lime);
     line-height: 1.5;
-    padding-top: 0.15rem
+    padding-top: 0.15rem;
   }
 
   .naturis-page .contact-item-label {
@@ -1485,7 +1504,7 @@
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.56);
     margin-bottom: 0.35rem;
-    font-weight: 700
+    font-weight: 700;
   }
 
   .naturis-page .contact-item-text {
@@ -1493,24 +1512,24 @@
     font-size: 1rem;
     line-height: 1.45;
     color: #fff;
-    font-weight: 600
+    font-weight: 600;
   }
 
   .naturis-page .contact-panel {
-    background: rgba(13, 26, 18, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(6, 26, 40, 0.65);
+    border: 1px solid rgba(228, 170, 65, 0.2);
     padding: 2rem;
-    border-radius: 0;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22)
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
   }
 
   .naturis-page .parent-label {
     font-size: 0.62rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.58);
+    color: var(--naturis-gold-light);
     margin-bottom: 0.95rem;
-    font-weight: 700
+    font-weight: 700;
   }
 
   .naturis-page .parent-name {
@@ -1518,14 +1537,14 @@
     font-size: 2.05rem;
     line-height: 1.05;
     color: #fff;
-    margin: 0 0 0.85rem
+    margin: 0 0 0.85rem;
   }
 
   .naturis-page .parent-desc {
     font-size: 0.9rem;
     line-height: 1.65;
     color: rgba(255, 255, 255, 0.72);
-    margin: 0 0 1.6rem
+    margin: 0 0 1.6rem;
   }
 
   .naturis-page .accredit-box {
@@ -1533,17 +1552,18 @@
     grid-template-columns: auto 1fr;
     gap: 1rem;
     align-items: center;
-    background: rgba(61, 107, 83, 0.18);
-    border: 1px solid rgba(184, 217, 160, 0.14);
+    background: rgba(9, 35, 55, 0.6);
+    border: 1px solid rgba(228, 170, 65, 0.2);
     border-left: 3px solid var(--naturis-lime);
-    padding: 1rem 1.1rem
+    padding: 1rem 1.1rem;
+    border-radius: 6px;
   }
 
   .naturis-page .accredit-year {
     font-family: 'DM Serif Display', serif;
     font-size: 2rem;
     line-height: 1;
-    color: #fff
+    color: var(--naturis-lime);
   }
 
   .naturis-page .accredit-copy strong {
@@ -1551,14 +1571,14 @@
     font-size: 0.95rem;
     line-height: 1.2;
     color: #fff;
-    margin-bottom: 0.3rem
+    margin-bottom: 0.3rem;
   }
 
   .naturis-page .accredit-copy span {
     display: block;
     font-size: 0.82rem;
     line-height: 1.35;
-    color: rgba(255, 255, 255, 0.74)
+    color: rgba(255, 255, 255, 0.74);
   }
 
   .naturis-page .accredit-copy .ipan-accreditation {
@@ -1566,191 +1586,190 @@
     line-height: 1.25;
     font-weight: 700;
     color: #fff;
-    margin-top: 0.2rem
+    margin-top: 0.2rem;
   }
 
   @media (max-width:991px) {
     .contact-section {
-      padding: 70px 0 60px
+      padding: 70px 0 60px;
     }
 
     .contact-grid {
       grid-template-columns: 1fr;
-      gap: 1.8rem
+      gap: 1.8rem;
     }
 
     .contact-panel {
-      padding: 1.5rem
+      padding: 1.5rem;
     }
 
     .naturis-page .contact-intro {
-      font-size: 0.92rem
+      font-size: 0.92rem;
     }
   }
 
   @media (max-width:768px) {
     .contact-section {
-      padding: 60px 0 50px
+      padding: 60px 0 50px;
     }
 
     .naturis-page .contact-title {
-      font-size: 1.8rem
+      font-size: 1.8rem;
     }
 
     .naturis-page .contact-intro {
       font-size: 0.88rem;
-      margin-bottom: 1.5rem
+      margin-bottom: 1.5rem;
     }
 
     .naturis-page .contact-list li {
       padding: 0.8rem 0;
       grid-template-columns: 16px 1fr;
-      gap: 0.75rem
+      gap: 0.75rem;
     }
 
     .naturis-page .contact-item-label {
       font-size: 0.58rem;
-      margin-bottom: 0.25rem
+      margin-bottom: 0.25rem;
     }
 
     .naturis-page .contact-item-text {
-      font-size: 0.95rem
+      font-size: 0.95rem;
     }
 
     .naturis-page .contact-panel {
-      padding: 1.25rem
+      padding: 1.25rem;
     }
 
     .naturis-page .parent-name {
       font-size: 1.65rem;
-      margin-bottom: 0.65rem
+      margin-bottom: 0.65rem;
     }
 
     .naturis-page .parent-desc {
       font-size: 0.85rem;
-      margin-bottom: 1.25rem
+      margin-bottom: 1.25rem;
     }
 
     .naturis-page .accredit-year {
-      font-size: 1.6rem
+      font-size: 1.6rem;
     }
 
     .naturis-page .accredit-copy strong {
-      font-size: 0.88rem
+      font-size: 0.88rem;
     }
 
     .naturis-page .accredit-copy span {
-      font-size: 0.75rem
+      font-size: 0.75rem;
     }
   }
 
   @media (max-width:640px) {
     .contact-section {
-      padding: 50px 0 40px
+      padding: 50px 0 40px;
     }
 
     .naturis-page .contact-kicker {
-      font-size: 0.62rem
+      font-size: 0.62rem;
     }
 
     .naturis-page .contact-title {
-      font-size: 1.6rem
+      font-size: 1.6rem;
     }
 
     .naturis-page .contact-intro {
-      font-size: 0.82rem
+      font-size: 0.82rem;
     }
 
     .naturis-page .contact-list li {
       padding: 0.7rem 0;
-      gap: 0.6rem
+      gap: 0.6rem;
     }
 
     .naturis-page .contact-list i {
-      font-size: 0.7rem
+      font-size: 0.7rem;
     }
 
     .naturis-page .contact-item-label {
-      font-size: 0.54rem
+      font-size: 0.54rem;
     }
 
     .naturis-page .contact-item-text {
-      font-size: 0.9rem
+      font-size: 0.9rem;
     }
 
     .naturis-page .contact-panel {
-      padding: 1rem
+      padding: 1rem;
     }
 
     .naturis-page .parent-label {
       font-size: 0.56rem;
-      margin-bottom: 0.75rem
+      margin-bottom: 0.75rem;
     }
 
     .naturis-page .parent-name {
       font-size: 1.4rem;
-      margin-bottom: 0.5rem
+      margin-bottom: 0.5rem;
     }
 
     .naturis-page .parent-desc {
       font-size: 0.8rem;
-      margin-bottom: 1rem
+      margin-bottom: 1rem;
     }
 
     .naturis-page .accredit-box {
       gap: 0.8rem;
-      padding: 0.9rem
+      padding: 0.9rem;
     }
 
     .naturis-page .accredit-year {
-      font-size: 1.4rem
+      font-size: 1.4rem;
     }
 
     .naturis-page .accredit-copy strong {
       font-size: 0.82rem;
-      margin-bottom: 0.2rem
+      margin-bottom: 0.2rem;
     }
 
     .naturis-page .accredit-copy span {
-      font-size: 0.72rem
+      font-size: 0.72rem;
     }
   }
 
   @media (max-width:480px) {
     .contact-section {
-      padding: 40px 0 30px
+      padding: 40px 0 30px;
     }
 
     .contact-section::before {
-      display: none
+      display: none;
     }
 
     .naturis-page .contact-intro {
-      font-size: 0.78rem
+      font-size: 0.78rem;
     }
 
     .naturis-page .contact-list {
-      border-top: none
+      border-top: none;
     }
 
     .naturis-page .contact-list li {
       padding: 0.6rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06)
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .naturis-page .contact-panel {
-      padding: 0.9rem
+      padding: 0.9rem;
     }
 
     .naturis-page .parent-name {
-      font-size: 1.25rem
+      font-size: 1.25rem;
     }
 
     .naturis-page .accredit-year {
-      font-size: 1.25rem
+      font-size: 1.25rem;
     }
-  }
-</style>
+  }</style>
 {% endblock %}
 
 {% block content %}

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact &amp; Location | Naturis Marketplace</title>
+  <meta name="description" content="Contact details and facility location for Naturis Foods / Goshen Giant Foods Ltd.">
+  <link rel="canonical" href="{{ canonical_url|default:request.build_absolute_uri }}">
+  <meta name="theme-color" content="#092337">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2712%27 fill=%27%23092337%27/%3E%3Cpath d=%27M12 44Q32 34 48 14Q48 45 25 51Z%27 fill=%27%23e4aa41%27/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #092337;
+      --deep: #061a28;
+      --gold: #e4aa41;
+      --gold-hover: #d39c36;
+      --cream: #f8f5ee;
+      --sand: #ede7db;
+      --ink: #193044;
+      --muted: #657584;
+      --line: #dee5e7;
+      --green: #40674f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+      background: #fff;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1220px; margin: auto; padding: 0 24px; }
+    .utility {
+      background: var(--deep);
+      color: #c3d7dc;
+      font-size: 12px;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: 9px 0;
+    }
+    .utility .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    header {
+      background: var(--navy);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      box-shadow: 0 4px 20px rgba(0, 20, 33, 0.15);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+      gap: 20px;
+    }
+    .logo {
+      font: 800 25px 'Manrope', sans-serif;
+      letter-spacing: -.06em;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      column-gap: 8px;
+    }
+    .logo svg { width: 34px; height: 34px; }
+    .logo b { color: var(--gold); }
+    .logo small {
+      flex-basis: 100%;
+      margin-left: 42px;
+      display: block;
+      font: 500 10px 'DM Sans', sans-serif;
+      letter-spacing: .23em;
+      text-transform: uppercase;
+      color: #b8cbd4;
+      margin-top: -4px;
+    }
+    .navlinks { display: flex; gap: 23px; align-items: center; font-size: 14px; }
+    .navlinks a:hover { text-decoration: underline; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 12px 17px;
+      font-weight: 700;
+      line-height: 1.3;
+      transition: .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button.gold { background: var(--gold); color: var(--deep); }
+    .button.line { border-color: var(--line); background: #fff; color: var(--ink); }
+
+    .doc {
+      max-width: 900px;
+      margin: auto;
+      padding: 58px 24px 85px;
+    }
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: 12px;
+      font-weight: 800;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .doc h1 {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(34px, 5vw, 56px);
+      letter-spacing: -.035em;
+      margin: 10px 0 24px;
+      color: var(--navy);
+    }
+    .contact-card {
+      background: var(--cream);
+      border: 1px solid var(--sand);
+      border-left: 4px solid var(--gold);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 24px 0 32px;
+    }
+    .contact-card h3 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 20px;
+      margin: 0 0 12px;
+      color: var(--navy);
+    }
+    .contact-card p {
+      margin: 6px 0;
+      font-size: 15px;
+    }
+    .contact-card a {
+      color: var(--navy);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    footer {
+      background: var(--deep);
+      color: #bdd1d6;
+      padding: 46px 0 25px;
+    }
+    .footergrid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 22px;
+    }
+    .footergrid h3 { color: #fff; margin: 0 0 10px; font-size: 17px; }
+    .footergrid p, .footergrid a { font-size: 13px; }
+    .footergrid a { display: block; margin: 7px 0; }
+    .footergrid a:hover { text-decoration: underline; color: #fff; }
+    .footend {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 17px;
+      margin-top: 26px;
+      font-size: 12px;
+    }
+    @media (max-width: 650px) {
+      .doc { padding: 40px 17px 65px; }
+      .footergrid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="utility">
+    <div class="wrap">
+      <span>Naturis Foods · Wholesale marketplace</span>
+      <span>Mixed cartons · Delivered quotations</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="{% url 'foods:index' %}" aria-label="Naturis Marketplace home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="34" height="34" style="flex-shrink:0;">
+          <rect width="64" height="64" rx="12" fill="#092337"/>
+          <path d="M12 44Q32 34 48 14Q48 45 25 51Z" fill="#e4aa41"/>
+        </svg>
+        naturis<b>.</b><small>Marketplace</small>
+      </a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="{% url 'foods:about' %}">About</a>
+        <a href="{% url 'foods:index' %}#catalogue">Catalogue</a>
+        <a href="{% url 'foods:trade_terms' %}">Trade terms</a>
+        <a href="{% url 'foods:contact' %}" style="font-weight:700;">Contact</a>
+        <a href="{% url 'foods:index' %}#quote" class="button gold">Request a quotation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="doc">
+      <span class="eyebrow">Get in touch</span>
+      <h1>Contact &amp; Location</h1>
+      <p>Naturis Foods is manufactured, packaged and distributed by <strong>Goshen Giant Foods Ltd.</strong>, a subsidiary of <strong>Goshen Giant Group Ltd.</strong>.</p>
+
+      <div class="contact-card">
+        <h3>Processing &amp; Factory Facility</h3>
+        <p><strong>Address:</strong> Plot 48, Itam Industrial Layout, Uyo, Akwa Ibom State, Nigeria</p>
+        <p><strong>Email:</strong> <a href="mailto:inquiry@goshengiantgroup.com">inquiry@goshengiantgroup.com</a></p>
+        <p><strong>Phone / WhatsApp:</strong> +234 705 702 5093</p>
+        <p><strong>Business Hours:</strong> Monday – Friday: 8:00 AM – 5:00 PM (WAT)</p>
+      </div>
+
+      <h2>Wholesale Orders &amp; Global Inquiries</h2>
+      <p>For wholesale inquiries, distributor agreements, delivered ocean freight or consolidated air cargo quotes, please build a mixed-carton request through our marketplace catalogue.</p>
+
+      <p style="margin-top: 28px;">
+        <a class="button gold" href="{% url 'foods:index' %}#quote">Request a wholesale quote</a>
+        <a class="button line" href="{% url 'foods:index' %}#catalogue" style="margin-left: 8px;">View product catalogue</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footergrid">
+        <div>
+          <h3>Naturis Marketplace</h3>
+          <p>Naturis Foods is a brand of Goshen Giant Foods Ltd., a subsidiary of Goshen Giant Group Ltd..</p>
+        </div>
+        <div>
+          <h3>Information</h3>
+          <a href="{% url 'foods:about' %}">About the company</a>
+          <a href="{% url 'foods:trade_terms' %}">Wholesale trade terms</a>
+          <a href="{% url 'foods:privacy' %}">Privacy notice</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="{% url 'foods:contact' %}">Contact details</a>
+          <a href="mailto:inquiry@goshengiantgroup.com">inquiry@goshengiantgroup.com</a>
+          <a href="{% url 'foods:index' %}#quote">Build a carton request</a>
+        </div>
+      </div>
+      <div class="footend">
+        © 2026 Naturis Foods · Goshen Giant Foods Ltd. · Wholesale buyers only
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

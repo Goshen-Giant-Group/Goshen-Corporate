@@ -4,11 +4,11 @@ from django.conf import settings
 
 
 class LabSiteMiddleware:
-    """Route configured lab hosts to the lab URLconf.
+    """Route configured lab hosts to their respective URLconf.
 
-    This allows the lab site to live on a separate subhost, such as
-    lab.example.com, while the main careers site keeps using the default
-    project URLconf.
+    This allows:
+    - lab.example.com -> lab.urls (request.lab_site = True)
+    - main corporate domain -> config.urls (careers/jobs)
     """
 
     def __init__(self, get_response):
@@ -22,5 +22,4 @@ class LabSiteMiddleware:
 
         if is_lab_site:
             request.urlconf = 'lab.urls'
-
         return self.get_response(request)
